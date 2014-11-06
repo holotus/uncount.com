@@ -379,12 +379,22 @@ h1 {
 #counting-step-5{ 
   background: #fff url(../images/counting-step-5.png) center bottom no-repeat;
   background-size: 500px 165px;
+  -webkit-transition-delay: 0.15s;
+  -moz-transition-delay: 0.15s;
+  -ms-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  transition-delay: 0.15s;
 }
 #counting-step-6 {
   float: right;
   background: #fff url(../images/counting-step-6.png) center bottom no-repeat;
   background-size: 500px 165px;
-}
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+} 
+ 
 #mnemonic-step-2 {
   background: #fff url(../images/mnemonic-step-2.png) right center no-repeat;
   background-size: 407px 350px;
@@ -607,11 +617,11 @@ h1 {
   transform: scale(1.1);
 }
 
-#next-step .hero-octicon {
+#last-step .hero-octicon {
   background-color: #00BFA5; 
 }
 
-#next-step .hero-octicon .mega-octicon { 
+#last-step .hero-octicon .mega-octicon { 
   color: #fff;
 }
 
@@ -715,39 +725,30 @@ h1 {
   padding-right: 0;
 }
 
-.next-steps .custom-urls {
+.next-steps .pdf {
   -webkit-transition-delay: 0.15s;
   -moz-transition-delay: 0.15s;
   -ms-transition-delay: 0.15s;
   -o-transition-delay: 0.15s;
   transition-delay: 0.15s;
 }
-
-.custom-urls .mega-octicon {
+/*
+.pdf .mega-octicon {
   -webkit-transform:rotate(-45deg);
   -moz-transform:rotate(-45deg);
   -o-transform:rotate(-45deg);
   -ms-transform:rotate(-45deg);
   transform:rotate(-45deg);
-}
+}*/
 
-.next-steps .guides {
+.next-steps .gift {
   -webkit-transition-delay: 0.3s;
   -moz-transition-delay: 0.3s;
   -o-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
 
-
-#next-step img{
-  margin-top: 60px;
-  margin-bottom: 60px;
-  width: 834px;
-margin-right: auto;
-margin-left: auto; 
-display: block;
-
-}
+ 
 /* end next steps */
 
 footer {
@@ -760,6 +761,8 @@ footer {
   padding: 40px 0;
   margin: 70px auto 0 auto;
   border-top: 1px solid #eee;
+
+text-align: center;
 }
 
 .site-footer-links li {
@@ -810,14 +813,11 @@ footer .right {
   font-style: normal;
 }
 
-.octicon-book:before { content: '\f007'} /*  */
 .octicon-check:before { content: '\f03a'} /*  */
 .octicon-chevron-right:before { content: '\f078'} /*  */
-
-
-.octicon-link:before { content: '\f05c'} /*  */
-.octicon-mark-github:before { content: '\f00a'} /*  */
-.octicon-pencil:before { content: '\f058'} /*  */
+.octicon-device-mobile:before { content: '\f038'} /*  */
+.octicon-file-pdf:before { content: '\f014'} /*  */
+.octicon-gift:before { content: '\f042'} /*  */
 
 /* @end Octicons */
 
