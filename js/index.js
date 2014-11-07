@@ -22,6 +22,16 @@ angular.module('UncountApp', [])
 
   $scope.tabClicked = function(event, newTab) {
     event.preventDefault();
+      
+    if(newTab == 2){
+      $("html, body").animate({ scrollTop: $("#page2").offset().top - 80 }, "slow", function () { 
+      });
+
+    } else{
+      $("html, body").animate({ scrollTop: $("#page1").offset().top - 80 }, "slow", function () { 
+      });
+    }
+
     $scope.currentTab = newTab;
   };
   $scope.cardTabClicked = function(event) {
@@ -32,8 +42,8 @@ angular.module('UncountApp', [])
     event.preventDefault();
       $scope.currentTab = 2;
       
-      $("html, body").animate({ scrollTop: $("#hero-spot").height() }, "slow", function () { 
-    });
+      $("html, body").animate({ scrollTop: $("#answer").offset().top - 80 }, "slow", function () { 
+      });
   };
 
 

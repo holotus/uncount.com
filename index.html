@@ -18,15 +18,19 @@
       <img src="images/hero-card.png" class="card" >
     </section>
     <section id="tutorial" ng-controller="TutorialController">
-      <h2>See the D above? Let's figure it out with different approach and compare:</h2>        
+      <h1 id="page1">Conventional piano sight reading approach suggests us to count, but is it necessary?</h1> 
       <ul class="tabs">
-        <li><a href="#" ng-class="{selected:currentTab == 0}" ng-click="tabClicked($event, 0)">Counting approach</a></li>
-        <!-- li><a href="#" ng-class="{selected:currentTab == 1}" ng-click="tabClicked($event, 1)">Mnemonic</a></li -->
-        <li><a href="#" ng-class="{selected:currentTab == 2}" ng-click="tabClicked($event, 2)">Visual approach</a></li>
+        <li><a href="#" ng-class="{selected:0 == 0}" ng-click="tabClicked($event, 0)">1. Conventional approach</a></li>       
+        <li><a href="#" ng-class="{selected:1 == 2}" ng-click="tabClicked($event, 2)">2. Recommended approach</a></li>
       </ul>
-      <ul id="counting" class="tutorial-list wrapper" ng-class="{active:currentTab == 0}">
+      <!-- ul class="tabs">
+        <!-- li><a href="#" ng-class="{selected:currentTab == 0}" ng-click="tabClicked($event, 0)">Counting approach</a></li>
+        <!-- li><a href="#" ng-class="{selected:currentTab == 1}" ng-click="tabClicked($event, 1)">Mnemonic</a></li>
+        <li><a href="#" ng-class="{selected:currentTab == 2}" ng-click="tabClicked($event, 2)">Visual approach</a></li>
+      </ul-->
+      <ul id="counting" class="tutorial-list wrapper" ng-class="{active:0 == 0}">
         <li id="counting-step-1" class="image-right" step>
-          <h4>Starting with the Middle-C</h4>
+          <h4>We start with the Middle-C (the highlighted note)</h4>
         </li>
         <li id="counting-step-2" class="image-right" step>
           <h4>... the one below is a B</h4>
@@ -54,14 +58,22 @@
           </div -->          
         </li>
         <li id="last-step" class="question" step>
-          <h4>8 Steps, conventional approach suggests counting, but is it necessary? </h4>          
-          <a href="#" ng-click="nextPageClicked($event)" class="hero-octicon">
+          <h4>Wait a minute ...</h4>
+          <p>8 steps for 1 note? In paino playback we are dealing with a stream of notes, we don't have the leisure of seconds to count. But how some of the pianist can sight read a new piece in real time?</p>
+          <!-- a href="#" ng-click="nextPageClicked($event)" class="hero-octicon">
             <span class="mega-octicon octicon-chevron-right"></span>
           </a>      
-          <p>Find out in next page</p>
+          <p>Find out in next page</p-->
         </li>
       </ul>
-      <ul id="mnemonic" class="tutorial-list wrapper" ng-class="{active:currentTab == 1}">
+
+      <h1 id="page2">It's possible to read without counting.</h1> 
+      <ul class="tabs">
+        <li><a href="#" ng-class="{selected:1 == 0}" ng-click="tabClicked($event, 0)">1. Conventional approch</a></li>       
+        <li><a href="#" ng-class="{selected:2 == 2}" ng-click="tabClicked($event, 2)">2. Recommended approach</a></li>
+      </ul>
+
+      <ul id="mnemonic" class="tutorial-list wrapper" ng-class="{active:0 == 1}">
         <li id="mnemonic-step-1" class="" step>
           <img src="images/mnemonic.png" >
         </li>
@@ -84,10 +96,9 @@
           </a>          
         </li>
       </ul>
-      <ul id="uncount" class="tutorial-list wrapper" ng-class="{active:currentTab == 2}">
-        <li id="step-done" class="" step>
-          <h4>You either see it or not.</h4>
-          <p>TIPS: Don't count.</p>
+      <ul id="uncount" class="tutorial-list wrapper" ng-class="{active:2 == 2}">
+        <li id="step-done" class="" step> 
+          <p>Hint: Don't count.</p>
           <div id="card" ng-class="{open:isCardOpened}" ><!--
             --><img src="images/card-l.png" ><!-- 
             --><img src="images/card-r.png" ><!--
@@ -97,7 +108,8 @@
             <li><a href="#" ng-class="{selected:!isCardOpened}" ng-click="cardTabClicked($event)">{{isCardOpened ? 'Reset' : 'Open'}}</a></li>
           </ul>
           <img src="images/d-on-piano.png" ng-class="{hidden:!isCardOpened}">
-          <p  ng-class="{hidden:!isCardOpened}">Explaination: That note is on the middle line (you do NOT need to count to know that), use that as a visual cue and associate it with the piano key. Make sure you aware of the visual relationship between the staff and the piano, learn to <a>visualize the staff as a piano</a>. Avoid any counting of note, this slight change of habit will make you read 10 times faster.</p>
+          <p  ng-class="{hidden:!isCardOpened}">Explaination: 1. This note is on the middle line, you do NOT need to count to know that.  2. Aware that the lines and spaces is an <a>abstraction of the white keys</a>, so practice your imagination until you can visualize the line and space as a full piano keyboard.</p>
+          <p ng-class="{hidden:!isCardOpened}">Once again, avoid any counting and approach it visually. This slight change of habit will make you read 10 times faster.</p>
           
           <div class="hero-octicon" ng-class="{'animate-in':!isCardOpened}">
             <span class="mega-octicon octicon-check"></span>
