@@ -33,7 +33,7 @@
       <!-- <h2>1. Stop counting the lines and spaces.<br/>2. Visualizing the piano.<br/>3. Read 10 times faster.</h2> -->
       
       <a href="#" class="corner-link">Pre-order from kickstarter</a>
-      <img src="images/hero-card.png" class="card" >
+      <img src="images/hero-card.png" class="card"  ng-click="tabClicked($event, 2)" >
     </section>
     <section id="tutorial">
       <h1 id="page1">Conventional approach</h1>
@@ -139,7 +139,7 @@
  -->
  
 
-          <p  class="solution-details" ng-class="{'animate-in':!isCardOpened}">Explaination: 1. This note is on the middle line, you do NOT need to count to know that.  2. Aware that the lines and spaces is an <a>abstraction of the white keys</a>, so practice your imagination until you can visualize the line and space as a piano keyboard rotated 90 degrees.</p>
+          <p  class="solution-details" ng-class="{'animate-in':!isCardOpened}">TIP#1: You do <a>not</a> need to count to know which line (or space) a note is on (e.g. this one is in the middle).  TIP#2: Open and close the card until you see the key even when the card is close.  TIP#3: Do you know that <a>both</a> the lines and spaces are repersenting <a>white keys</a>? Each white keys can line up nicely with all the line and space.  It's like turning a full piano keyboard 90 degrees counter clockwise.</p>
           <!-- <p  class="solution-details" ng-class="{'animate-in':!isCardOpened}">Once again, avoid any counting and approach it visually. This slight change of habit will make you read 10 times faster.</p> -->
           
           <img src="images/d-on-piano.png" class="solution-details" ng-class="{'animate-in':!isCardOpened}">

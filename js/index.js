@@ -27,6 +27,7 @@ angular.module('UncountApp', ['angulartics', 'angulartics.google.analytics'])
     if(newTab == 2){
       $("html, body").animate({ scrollTop: $("#page2").offset().top - 80 }, "slow", function () { 
       });
+      $scope.isCardOpened = false;
 
     } else{
       $("html, body").animate({ scrollTop: $("#page1").offset().top - 80 }, "slow", function () { 
