@@ -26,28 +26,33 @@
 
 </script>
   </head>
-  <body>
+  <body  ng-controller="TutorialController">
     <section id="hero-spot">
       <a href="#"><img src="images/logo.png" class="logo"></a>
-      <h1>Sight-read 10x faster by stop counting.</h1>
-      <h2>1. Stop counting the lines and spaces.<br/>2. Visualizing the piano.<br/>3. Read 10 times faster.</h2>
+      <h2>"don't count, just read."</h2>
+      <!-- <h2>1. Stop counting the lines and spaces.<br/>2. Visualizing the piano.<br/>3. Read 10 times faster.</h2> -->
+      
       <a href="#" class="corner-link">Pre-order from kickstarter</a>
       <img src="images/hero-card.png" class="card" >
     </section>
-    <section id="tutorial" ng-controller="TutorialController">
-      <h1 id="page1">Conventional piano sight reading approach suggests us to count, but is it necessary?</h1> 
-      <ul class="tabs">
+    <section id="tutorial">
+      <h1 id="page1">Conventional approach</h1>
+      <h2>Conventional piano sight reading approach suggests us to count as follow:</h2> 
+      <!-- <ul class="tabs">
         <li><a href="#" ng-class="{selected:0 == 0}" ng-click="tabClicked($event, 0)">1. Conventional approach</a></li>       
         <li><a href="#" ng-class="{selected:1 == 2}" ng-click="tabClicked($event, 2)">2. Recommended approach</a></li>
-      </ul>
+      </ul> -->
       <!-- ul class="tabs">
         <!-- li><a href="#" ng-class="{selected:currentTab == 0}" ng-click="tabClicked($event, 0)">Counting approach</a></li>
         <!-- li><a href="#" ng-class="{selected:currentTab == 1}" ng-click="tabClicked($event, 1)">Mnemonic</a></li>
         <li><a href="#" ng-class="{selected:currentTab == 2}" ng-click="tabClicked($event, 2)">Visual approach</a></li>
       </ul-->
       <ul id="counting" class="tutorial-list wrapper" ng-class="{active:0 == 0}">
+        <li id="counting-step-0" class="image-right" step>
+          <h4>What note is this?</h4>
+        </li>
         <li id="counting-step-1" class="image-right" step>
-          <h4>We start with the Middle-C (the highlighted note)</h4>
+          <h4>hm... let's start with the Middle-C</h4>
         </li>
         <li id="counting-step-2" class="image-right" step>
           <h4>... the one below is a B</h4>
@@ -68,15 +73,15 @@
           <h4>... finally the D</h4>
         </li>
         <li id="step-done" class="" step>
-          <h4>... and the D on the piano looks like this.</h4>
+          <h4>... where is it on the piano? Here.</h4>
           <img src="images/d-on-piano.png" >
           <!-- div class="hero-octicon">
             <span class="mega-octicon octicon-check"></span>
           </div -->          
         </li>
         <li id="last-step" class="question" step>
-          <h4>Wait a minute ...</h4>
-          <p>8 steps for 1 note? In paino playback we are dealing with a stream of notes, we don't have the leisure of seconds to count. But how some of the pianist can sight read a new piece in real time?</p>
+          <h4>Counting 8 steps for 1 note?</h4>
+          <p>In paino playback we are dealing with a stream of notes, we don't have the leisure of seconds to count. But how some of the pianist can sight read a new piece in real time?</p>
           <!-- a href="#" ng-click="nextPageClicked($event)" class="hero-octicon">
             <span class="mega-octicon octicon-chevron-right"></span>
           </a>      
@@ -84,11 +89,17 @@
         </li>
       </ul>
 
-      <h1 id="page2">It's possible to read without counting.</h1> 
-      <ul class="tabs">
+    </section>
+
+    <section id="recommended">
+
+      <h1 id="page2">Recommended approach</h1>
+        <h2>1. Stop counting the lines and spaces.<br/>2. Visualizing the piano.<br/>3. Train your instincts.</h2>
+      
+      <!-- <ul class="tabs">
         <li><a href="#" ng-class="{selected:1 == 0}" ng-click="tabClicked($event, 0)">1. Conventional approch</a></li>       
         <li><a href="#" ng-class="{selected:2 == 2}" ng-click="tabClicked($event, 2)">2. Recommended approach</a></li>
-      </ul>
+      </ul> -->
 
       <ul id="mnemonic" class="tutorial-list wrapper" ng-class="{active:0 == 1}">
         <li id="mnemonic-step-1" class="" step>
@@ -114,23 +125,32 @@
         </li>
       </ul>
       <ul id="uncount" class="tutorial-list wrapper" ng-class="{active:2 == 2}">
-        <li id="step-done" class="" step> 
-          <p>Hint: Don't count.</p>
-          <div id="card" ng-class="{open:isCardOpened}" ><!--
-            --><img src="images/card-l.png" ><!-- 
-            --><img src="images/card-r.png" ><!--
-          --></div>
-
-          <ul class="tabs">
+        <li id="step-done2" class="" step> 
+          <div id="card-holder">
+            <div id="card" ng-class="{open:isCardOpened}"  ng-click="cardTabClicked($event)" ><!--
+              --><img src="images/card-l.png" ><!-- 
+              --><img src="images/card-r.png" ><!--
+            --></div>
+          </div>
+          
+          <!-- <ul class="tabs">
             <li><a href="#" ng-class="{selected:!isCardOpened}" ng-click="cardTabClicked($event)" analytics-on="click" analytics-category="Button" analytics-event="Click" analytics-label="Open Card">{{isCardOpened ? 'Reset' : 'Open'}}</a></li>
           </ul>
-          <img src="images/d-on-piano.png" ng-class="{hidden:!isCardOpened}">
-          <p  ng-class="{hidden:!isCardOpened}">Explaination: 1. This note is on the middle line, you do NOT need to count to know that.  2. Aware that the lines and spaces is an <a>abstraction of the white keys</a>, so practice your imagination until you can visualize the line and space as a full piano keyboard.</p>
-          <p ng-class="{hidden:!isCardOpened}">Once again, avoid any counting and approach it visually. This slight change of habit will make you read 10 times faster.</p>
+ -->
+ 
+
+          <p  class="solution-details" ng-class="{'animate-in':!isCardOpened}">Explaination: 1. This note is on the middle line, you do NOT need to count to know that.  2. Aware that the lines and spaces is an <a>abstraction of the white keys</a>, so practice your imagination until you can visualize the line and space as a piano keyboard rotated 90 degrees.</p>
+          <!-- <p  class="solution-details" ng-class="{'animate-in':!isCardOpened}">Once again, avoid any counting and approach it visually. This slight change of habit will make you read 10 times faster.</p> -->
           
-          <div class="hero-octicon" ng-class="{'animate-in':!isCardOpened}">
+          <img src="images/d-on-piano.png" class="solution-details" ng-class="{'animate-in':!isCardOpened}">
+
+          <ul class="tabs" >
+            <li><a href="#" ng-class="{selected:!isCardOpened}" ng-click="cardTabClicked($event)" analytics-on="click" analytics-category="Button" analytics-event="Click" analytics-label="Open Card">{{isCardOpened ? 'Reset' : 'Open and see'}}</a></li>
+          </ul>
+          <!-- <div class="hero-octicon" ng-class="{'animate-in':!isCardOpened}">
             <span class="mega-octicon octicon-check"></span>
-          </div>
+          </div> -->
+
         </li>
         <!-- li id="mnemonic-step-1" class="question" step>
           <h4>Don’t count.<br/>
@@ -140,7 +160,7 @@ Don’t use letter.<br/>
       </ul>
     </section>
     <section id="next-step">
-      <h1>Practice until you don't need to count.</h1>
+      <h1>Get the tools</h1>
       <h2>These tools will make your practice or teaching easier and faster.</h2>
       <!-- img src="images/footer.png" -->
 
@@ -177,5 +197,8 @@ Don’t use letter.<br/>
         <li>contact@uncount.com</li>
       </ul>
     </footer>
+    <!-- <section class="sticky-tabs">
+      <h2>Recommended approach</h2>
+    </section> -->
   </body>
 </html>

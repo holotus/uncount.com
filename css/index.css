@@ -111,7 +111,7 @@ h2 {
   text-align: center;
   font-weight: 200;
   line-height: 38px;
-  margin: 40px auto 0;
+  margin: 0px auto 0;
   font-size: 21px;
   max-width: 740px;
 }
@@ -152,7 +152,7 @@ textarea {
 }
 
 #hero-spot {
-  padding: 60px 0 0;
+  padding: 90px 0 0;
   position: relative;
   overflow: hidden;
   background: #222;
@@ -203,7 +203,7 @@ h1 {
   -webkit-backface-visibility: hidden;
   line-height: 1.5em;
   max-width: none;
-  margin: 10px auto 60px;
+  margin: 10px auto 16px;
   font-size: 18px;
 }
 
@@ -217,7 +217,7 @@ h1 {
 
 #hero-spot .card {
   display: block;
-  margin: 30px auto 0;
+  margin: 0px auto 0;
   max-width: 100%;
   width: 533px;
 }
@@ -239,7 +239,7 @@ h1 {
 }
 
 .tabs {
-  display: inline-block;
+  /*display: inline-block;*/
   margin: 45px auto 0;
   font-size: 0;
 }
@@ -304,7 +304,7 @@ h1 {
 /* Tutorials */
 
 .tutorial-list {
-  margin-top: 90px;
+  margin-top: 45px;
   counter-reset: tutorialstep;
   display: none;
 }
@@ -345,6 +345,10 @@ h1 {
   vertical-align: middle;
 }
 
+#counting-step-0 {
+  background: #fff url(../images/counting-step-0.png) right center no-repeat;
+  background-size: 407px 350px;
+}
 #counting-step-1 {
   background: #fff url(../images/counting-step-1.png) right center no-repeat;
   background-size: 407px 350px;
@@ -399,7 +403,13 @@ h1 {
   background: #fff url(../images/mnemonic-step-2.png) right center no-repeat;
   background-size: 407px 350px;
 }
-#step-done>img {
+#step-done2 {
+  background-color: #222;
+  border: none;
+  margin-top: 0;
+  padding: 0;
+}
+#step-done>img, #step-done2>img {
   display: block;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -407,7 +417,7 @@ h1 {
   margin-right: auto;
   margin-left: auto;
 }
-#step-done .hero-octicon {
+#step-done .hero-octicon, #step-done2 .hero-octicon {
   position: absolute;
   background-color: #fff;
   left: 0;
@@ -422,6 +432,24 @@ h1 {
 #mnemonic-step-1 img{
   height: 350px;
 } 
+#card {
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.8;  
+
+  -webkit-transition: all 0.1s ease-in-out 0s;
+  -moz-transition: all 0.1s ease-in-out 0s;
+  -o-transition: all 0.1s ease-in-out 0s;
+  transition: all 0.1s ease-in-out 0s;
+} 
+#card.open{
+  opacity: 1;    
+}
+#card:not(.open):hover{
+  position: relative;
+  opacity: 1;  
+  z-index: 100;
+}
 #card img:first-child
 {
   width: 298px;
@@ -554,7 +582,7 @@ h1 {
   left: -55px;
   top: 0;
   height: 105%;
-  width: 10px;
+  width: 0px;
   background-color: #f5f5f5;
 }
 
@@ -579,6 +607,7 @@ h1 {
 }
 
 .tutorial-list > li:after {
+  display: none;
   width: 58px;
   height: 58px;
   line-height: 58px;
@@ -692,7 +721,45 @@ h1 {
   padding-right: 0.6em;
 }
 
+
+.solution-details {
+
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+
+}
+.solution-details.animate-in {
+/*}*/
+/*.tutorial-list .animate-in {*/
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  transform: translateY(-40px);
+  opacity: 0 !important;
+  height: 0 !important;
+  margin-top: 0 !important; 
+  margin-bottom: 0 !important;
+}
 /* end Tutorials */
+
+
+#recommended {
+  color: #a7a7a7;
+  text-align: center;
+  background-color: #222;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+#recommended h1 {
+  color: #fff;
+}
+#recommended h2 {
+  /*color: #a7a7a7;*/
+}
 
 /* Next steps */
 
